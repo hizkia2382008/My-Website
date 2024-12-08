@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Kii</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="bg-gray-800 text-white text-center py-6">
+        <h1 class="text-4xl font-bold">Contact Me</h1>
+    </header>
+
+    <nav class="bg-gray-700 text-white p-4">
+        <ul class="flex justify-center space-x-6">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="about.html" class="hover:underline">About Me</a></li>
+            <li><a href="myGallery.html" class="hover:underline">My Gallery</a></li>
+            <li><a href="calculator.html" class="hover:underline">Kalkulator</a></li>
+            <li><a href="Registration.html" class="hover:underline">Registration</a></li>
+        </ul>
+    </nav>
+
+    <main class="container mx-auto p-6">
+        <section class="bg-white p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-semibold mb-4">Follow Me on Social Media</h2>
+            <ul class="space-y-2">
+                <li><a href="https://github.com/hizkia2382008" target="_blank"
+                        class="text-blue-600 hover:underline">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/hizkia-yesurun-fernando-sirait-7943a72b8/" target="_blank"
+                        class="text-blue-600 hover:underline">LinkedIn</a></li>
+                <li><a href="https://instagram.com/dn_hyfs" target="_blank"
+                        class="text-blue-600 hover:underline">Instagram</a></li>
+                <li><a href="https://fti.unai.edu" target="_blank" class="text-blue-600 hover:underline">FTI UNAI</a>
+                </li>
+                <li><a href="https://unai.edu" target="_blank" class="text-blue-600 hover:underline">UNAI</a></li>
+                <li><a href="https://www.youtube.com/@UniversitasAdventIndonesia" target="_blank"
+                        class="text-blue-600 hover:underline">UNAI
+                        YouTube</a></li>
+            </ul>
+        </section>
+
+        <button id="contactBtn"
+            class="mt-6 bg-Gray-600 text-white py-2 px-4 rounded-lg hover:bg-gray-700 transition duration-300">
+            Toggle Contact Info
+        </button>
+
+        <div id="contactInfo" class="hidden mt-6 bg-white p-6 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-4">Contact Information</h3>
+            <ul class="space-y-2">
+                <li>Email: hizkiasirait12@email.com</li>
+                <li>Phone: (+62)82170373307</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center py-4 mt-8">
+        <p>&copy; 2024 Hizkia Contact. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactBtn").addEventListener("click", function () {
+            const contactInfo = document.getElementById("contactInfo");
+            contactInfo.classList.toggle("hidden");
+        });
+    </script>
+
+</body>
+
+</html>

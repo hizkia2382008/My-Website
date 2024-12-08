@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="font-sans bg-gray-100 m-0 p-0">
+    <header class="bg-gray-800 text-white p-5 text-center shadow-md">
+        <h1 class="text-2xl font-bold">Hizkia Calculator</h1>
+    </header>
+
+    <nav class="bg-gray-700 text-white p-3">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="myGallery.html" class="hover:underline">My Gallery</a></li>
+            <li><a href="Registration.html" class="hover:underline">Registration</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="flex justify-center items-center min-h-screen">
+        <section class="bg-white p-5 rounded-md shadow-md w-full max-w-xs">
+            <div class="border border-gray-300 rounded-md overflow-hidden">
+                <p id="display" class="text-right text-2xl font-mono bg-gray-200 p-4">0</p>
+                <div class="grid grid-cols-4 gap-2 p-2">
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="7" onclick="press('7')">7</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="8" onclick="press('8')">8</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="9" onclick="press('9')">9</button>
+                    <button class="bg-blue-500 text-white py-2 text-lg rounded" aria-label="Divide"
+                        onclick="press('/')">/</button>
+
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="4" onclick="press('4')">4</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="5" onclick="press('5')">5</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="6" onclick="press('6')">6</button>
+                    <button class="bg-blue-500 text-white py-2 text-lg rounded" aria-label="Multiply"
+                        onclick="press('*')">x</button>
+
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="1" onclick="press('1')">1</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="2" onclick="press('2')">2</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="3" onclick="press('3')">3</button>
+                    <button class="bg-blue-500 text-white py-2 text-lg rounded" aria-label="Subtract"
+                        onclick="press('-')">-</button>
+
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="0" onclick="press('0')">0</button>
+                    <button class="bg-gray-300 py-2 text-lg rounded" aria-label="Decimal"
+                        onclick="press('.')">.</button>
+                    <button class="bg-red-500 text-white py-2 text-lg rounded" aria-label="Clear"
+                        onclick="clearConsole()">Clear</button>
+                    <button class="bg-blue-500 text-white py-2 text-lg rounded" aria-label="Add"
+                        onclick="press('+')">+</button>
+
+                    <button class="col-span-4 bg-green-500 text-white py-2 text-lg rounded" aria-label="Equals"
+                        onclick="calculate()">=</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-5">
+        <p>&copy; 2024 Hizkia Calculator</p>
+    </footer>
+
+    <script>
+        let expression = '';
+
+        function press(value) {
+            expression += value;
+            updateDisplay();
+        }
+
+        function calculate() {
+            try {
+                const result = eval(expression);
+                expression = result.toString();
+                updateDisplay();
+            } catch (error) {
+                expression = 'Error';
+                updateDisplay();
+                setTimeout(() => {
+                    expression = '';
+                    updateDisplay();
+                }, 2000);
+            }
+        }
+
+        function clearConsole() {
+            expression = '';
+            updateDisplay();
+        }
+
+        function updateDisplay() {
+            document.getElementById("display").innerText = expression || 0;
+        }
+
+        console.log("Calculator Initialized");
+    </script>
+</body>
+
+</html>

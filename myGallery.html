@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Data Analyst</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <header class="bg-gray-800 text-white p-4 text-center">
+        <h1 class="text-3xl font-bold">Welcome to Hizkia Gallery</h1>
+    </header>
+
+    <nav class="bg-gray-700 text-white p-3">
+        <ul class="flex justify-center space-x-4">
+            <li><a href="index.html" class="hover:underline">Home</a></li>
+            <li><a href="about.html" class="hover:underline">About</a></li>
+            <li><a href="calculator.html" class="hover:underline">Kalkulator</a></li>
+            <li><a href="Registration.html" class="hover:underline">Registration</a></li>
+            <li><a href="contact.html" class="hover:underline">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="flex justify-center items-center p-4">
+        <div class="grid grid-cols-3 gap-4 max-w-6xl w-full">
+            <div>
+                <img src="image1.jpg" alt="Data Analyst Tools"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image1.jpg')">
+                <p class="text-center mt-2">Exploring popular data analysis tools like Excel, SQL, Python, and R.</p>
+            </div>
+
+            <div>
+                <img src="image2.jpg" alt="Data Visualization"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image2.jpg')">
+                <p class="text-center mt-2">Understanding data patterns through effective data visualization techniques.
+                </p>
+            </div>
+
+            <div>
+                <img src="image3.jpg" alt="Data Cleaning"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image3.jpg')">
+                <p class="text-center mt-2">Data cleaning process, ensuring accurate and consistent data for analysis.
+                </p>
+            </div>
+
+            <div>
+                <img src="image4.jpg" alt="Business Intelligence"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image4.jpg')">
+                <p class="text-center mt-2">Using business intelligence tools to derive insights and make informed
+                    decisions.</p>
+            </div>
+
+            <div>
+                <img src="image5.jpg" alt="Reporting & Dashboards"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image5.jpg')">
+                <p class="text-center mt-2">Creating detailed reports and dashboards to communicate findings to
+                    stakeholders.</p>
+            </div>
+
+            <div>
+                <img src="image6.jpg" alt="Statistical Analysis"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image6.jpg')">
+                <p class="text-center mt-2">Using statistical methods to analyze data trends and predict future
+                    outcomes.</p>
+            </div>
+
+            <div>
+                <img src="image7.jpg" alt="Data Forecasting"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image7.jpg')">
+                <p class="text-center mt-2">Forecasting future trends based on historical data analysis.</p>
+            </div>
+
+            <div>
+                <img src="image8.jpg" alt="Machine Learning in Data Analysis"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image8.jpg')">
+                <p class="text-center mt-2">Implementing machine learning algorithms to automate data analysis tasks.
+                </p>
+            </div>
+
+            <div>
+                <img src="image9.jpg" alt="Collaborative Work"
+                    class="w-full max-w-sm rounded-lg cursor-pointer transition-transform transform hover:scale-110"
+                    onclick="displayImage('image9.jpg')">
+                <p class="text-center mt-2">Collaborating with other teams to solve complex business problems with data.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div id="image-display" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center hidden">
+        <div class="relative">
+            <img id="displayed-image" src="" alt="Displayed Image" class="max-w-full max-h-[90vh] rounded-lg">
+            <span class="absolute top-4 right-4 text-white text-3xl cursor-pointer font-bold"
+                onclick="closeImage()">X</span>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2024 Hizkia Gallery. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function displayImage(imageSrc) {
+            const imageDisplay = document.getElementById("image-display");
+            const displayedImage = document.getElementById("displayed-image");
+            displayedImage.src = imageSrc;
+            imageDisplay.classList.remove("hidden");
+        }
+
+        function closeImage() {
+            const imageDisplay = document.getElementById("image-display");
+            imageDisplay.classList.add("hidden");
+        }
+    </script>
+
+</body>
+
+</html>
